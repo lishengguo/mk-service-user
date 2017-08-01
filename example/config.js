@@ -34,7 +34,7 @@ const server = {
         auth: {
             key: "my private token key",
             tokenKeys: ["userId"],
-            exclude: ["/user/login", "/v1/user/ping", "/user/create"],
+            exclude: ["/user/login", "/user/ping", "/user/create"],
         },
         db: {
             name: "bizdata",
