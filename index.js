@@ -5,7 +5,7 @@ module.exports = {
     name: "user",
     version: "",
     description: "",
-    author: "",
+    author: "lsg",
     config,
     api,
 }
