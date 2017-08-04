@@ -1,8 +1,12 @@
 /*
 * api.js        //webapi接口定义（接口参数和返回值的格式转换）
 */
+var config
 const api = {
-    _init: (current) => model.config(current),
+    _init: (current) => {
+        config = current
+        model.config(current)
+    },
 
     ping: (dto) => true,
 
