@@ -5,7 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  }, 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lishengguo/mk-service-user.git"
   },
   "author": "lsg",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lishengguo/mk-service-user/issues"
+  },
+  "homepage": "https://github.com/lishengguo/mk-service-user#readme",
+  "dependencies": {
+    "mk-server": "^0.2.3",
+    "mk-service-auth": "^1.0.4",
+    "mk-service-db": "^1.0.5",
+    "mk-service-utils": "^1.0.2",
+    "mysql2": "^1.3.6"
+  }
 }
