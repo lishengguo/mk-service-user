@@ -14,22 +14,20 @@ const api = {
         return service.login(mobile || username, password).then(user => {
             if (user) {
                 ctx.setToken([user.id])
-                ctx.return(true)
+                return true
             } else {
-                ctx.return(false)
+                return false
             }
         })
     },
 
     create: ({ mobile, password }, ctx) => {
-        return service.create(mobile, password).then(user => {
-            ctx.return(user)
-        })
+        return service.create(mobile, password)
     },
 
     update: (user, ctx) => {
         user.id = ctx.token.userId
-        return service.update(user).then(ctx.return)
+        return service.update(user)
     },
 }
 module.exports = api
@@ -122,13 +120,13 @@ const dao = {
 * model.js      //数据模型定义
 */
 var model = {
-    config: (config) => { 
+    config: (config) => {
         let db = config.services.db
         if (!db) {
             throw ({ code: 100, message: "数据库访问组件 config.services.db 未初始化" })
         }
-        config.db = db = db.api.getDB()  
- 
+        config.db = db = db.api.getDB()
+
         let DataTypes = db.Sequelize;
 
         model.User = db.define(
@@ -147,4 +145,3 @@ var model = {
         model.User.sync()
     }
 }
- 
